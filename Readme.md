@@ -149,30 +149,25 @@ kubectl get nodes
 
 ---
 
-## Step 6: Why Use Kubeadm on EC2?
-✅ **Full Control Over Kubernetes Configuration**  
-- Manage networking, security, and upgrades manually.
-- Choose any CNI plugin (Calico, Flannel, etc.).
+## Step 6: Deploy a k8s-app
+```bash
+kubectl create deployment k8s-app --image=junny27/hello-k8s  
+kubectl expose deployment k8s-app --type=NodePort --port=80  
+kubectl get svc k8s-app  
+```
+Find the **NodePort**, then access the service via:  
+```bash
+http://<worker-node-public-ip>:<NodePort>
+```
 
-✅ **Cost Savings for Small Setups**  
-- AWS EKS costs ~$72/month for the control plane alone.
-- Running Kubernetes on EC2 can be more cost-effective for small teams.
-
-✅ **Hands-on Learning & Troubleshooting**  
-- Ideal for DevOps engineers preparing for the **CKA** exam.
-- Helps in understanding Kubernetes internals.
-
-✅ **Avoid Vendor Lock-in**  
-- No dependency on AWS-specific integrations.
-- Easier migration across cloud providers or on-prem setups.
-
-### When **Not** to Use Kubeadm on EC2?
-❌ If you need **production-grade scalability**, consider **EKS, GKE, or AKS**.  
-❌ If you want **automated upgrades & maintenance**, managed services are better.  
-❌ If you need **deep AWS integration**, EKS provides better support.
+✅ **Your Kubernetes cluster is live on AWS EC2!** 🚀  
 
 ---
 
 ## Conclusion
-Setting up Kubernetes with `kubeadm` on AWS EC2 provides **full control, cost savings, and valuable learning experience**. However, for **large-scale production deployments**, managed services like **EKS** or **GKE** offer better automation, security, and scalability.
+Setting up Kubernetes with `kubeadm` on AWS EC2 provides **full control, cost savings, and a valuable learning experience**. However, for **large-scale production deployments**, managed services like **EKS** or **GKE** offer better automation, security, and scalability.
+
+---
+
+Let me know if you need additional refinements! 🚀
 
