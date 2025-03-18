@@ -22,7 +22,11 @@ This guide outlines the steps needed to set up a Kubernetes cluster using kubead
 
 ## Step 2: Prepare Master & Worker Nodes
 Run the following commands on both the **master** and **worker** nodes.
+switch user to root user
 
+```bash
+sudo su -
+```
 ```bash
 # Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
