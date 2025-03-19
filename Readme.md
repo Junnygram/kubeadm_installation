@@ -23,13 +23,21 @@ This guide outlines the steps to set up a Kubernetes cluster using kubeadm on AW
 
 ---
 
-## Step 2: Prepare Nodes (Master & Worker)
-Run these commands **on all nodes**.
+## Step 2: Prepare Nodes (Master & Worker
+Execute the following commands **on all nodes**:  
 
-### Switch to Root User
+**User Data Script:**  
+```bash
+#!bin/bash
+```  
+or  
+
+**Switch to Root User:**  
 ```bash
 sudo su -
 ```
+
+
 
 ### Install kubectl
 ```bash
